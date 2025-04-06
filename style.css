@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #fff0f5;
+    color: #333;
+    padding: 40px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+  
+  .about {
+    flex: 1;
+  }
+  
+  .about h1 {
+    color: #cc5a71;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .about h2 {
+    font-size: 1.2em;
+    color: #7b3e4a;
+    margin-bottom: 20px;
+  }
+  .about p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-size: 1em;
+  }
+  
+  .foto {
+    flex: 0 0 200px;
+  }
+  
+  .foto-profil {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f8accf;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }  
+  foto-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: #ffb6c1;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.skills li:hover {
+    background-color: #ffeef5;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  .progress-bar {
+    width: 100%;
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .fill {
+    height: 10px;
+    background: #fba3c7;
+  }
+  .quote {
+    font-style: italic;
+    color: #cc5a71;
+    margin-top: 30px;
+  }
+  .container::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: -20px;
+    left: -20px;
+    background: #ffeaf2;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .judul {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.5s ease forwards;
+  }
+  
+  /* Animasi kotak yang berubah warna & bentuk */
+  .kotak {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    border-radius: 10px;
+    animation: goyang 2s ease-in-out infinite;
+    margin-top: 20px;
+  }
+  
+  /* Keyframes adalah gerakan animasinya */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes goyang {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+  }  
+  .tombol {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7eb9;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .tombol:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff7eb9;
+  }
+  .zoom-img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+  }
+  
+  .zoom-img:hover {
+    transform: scale(1.1);
+  }
+  .fade-kiri {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: masukKiri 1s ease-out forwards;
+  }
+  
+  @keyframes masukKiri {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .judul-utama {
+    animation: turunMuncul 1.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  
+  @keyframes turunMuncul {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .about {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: naikAbout 1.2s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes naikAbout {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .skill-box {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ffe4ec;
+    border-radius: 10px;
+    animation: getarSkill 3s infinite ease-in-out;
+  }
+  
+  @keyframes getarSkill {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+  }
+  .tombol-kontak {
+    padding: 10px 20px;
+    background: #ff99cc;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .tombol-kontak:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 0 15px #ff99cc;
+  }
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .scroll-fade.muncul {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .loading {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #ff99cc;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+  .loading {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #ff99cc;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+  .card {
+    width: 200px;
+    height: 120px;
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .card-front {
+    background: #ffd6e0;
+  }
+  
+  .card-back {
+    background: #ff99cc;
+    transform: rotateY(180deg);
+  }
+  .quote {
+    opacity: 0;
+    animation: muncul 1s ease forwards;
+  }
+  
+  .delay1 { animation-delay: 0.5s; }
+  .delay2 { animation-delay: 1s; }
+  .delay3 { animation-delay: 1.5s; }
+  
+  @keyframes muncul {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .foto-float {
+    animation: mengambang 3s ease-in-out infinite;
+  }
+  
+  @keyframes mengambang {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .bounce-kiri {
+    opacity: 0;
+    animation: bounceLeft 1s ease-out forwards;
+  }
+  
+  @keyframes bounceLeft {
+    0% { transform: translateX(-300px); opacity: 0; }
+    60% { transform: translateX(30px); opacity: 1; }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
